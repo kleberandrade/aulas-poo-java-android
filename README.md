@@ -23,10 +23,20 @@ Disciplina do quarto semestre do curso de Engenharia da Computação na [Unisal 
   <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_combustivel.PNG" height="400"/>
 </p>
 
-## Projeto 3 - Sistema de Estatística
+## Projeto 3 - Sistema de Empréstimo de Objetos
 
+<p align="center">
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/sistema_emprestimo.png" height="400"/>
+</p>
 
-## Projeto 4 - Sistema de Empréstimo de Objetos
+## Projeto 4 - Sistema de Estatística
 
+<p align="center">
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/sistema_estatistica.png" height="400"/>
+</p>
 
 ## Projeto 5 - Sistema Financeiro
+
+<p align="center">
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/sistema_financeiro.PNG" height="400"/>
+</p>
