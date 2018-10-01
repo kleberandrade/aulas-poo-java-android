@@ -19,6 +19,9 @@ Disciplina do quarto semestre do curso de Engenharia da Computação na [Unisal 
 
 ## Projeto 2 - Calculadora de Juros
 
+<p align="center">
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_combustivel.PNG" height="300"/>
+</p>
 
 ## Projeto 3 - Sistema de Estatística
 
