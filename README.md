@@ -1,4 +1,4 @@
-# Eletiva - Linguagem de Programação III - Linguagem JAVA
+# Paradigmas de Programação (Orientação a Objetos)
 
 Disciplina do quarto semestre do curso de Engenharia da Computação na [Unisal Campinas (campus São José)](https://unisal.br/unidades/campinas-sao-jose/). Todas as aulas são baseadas em pequenos sistemas funcionais orientado a objetos.
 
