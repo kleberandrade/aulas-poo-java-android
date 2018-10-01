@@ -14,13 +14,13 @@ Disciplina do quarto semestre do curso de Engenharia da Computação na [Unisal 
 ## Projeto 1 - Calculadora de IMC (Índice de Massa Corporal)
 
 <p align="center">
-  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_imc.PNG" height="300"/>
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_imc.PNG" height="400"/>
 </p>
 
 ## Projeto 2 - Calculadora de Juros
 
 <p align="center">
-  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_combustivel.PNG" height="300"/>
+  <img src="https://github.com/kleberandrade/aulas-poo-java-android/blob/master/Figuras/calculadora_combustivel.PNG" height="400"/>
 </p>
 
 ## Projeto 3 - Sistema de Estatística
