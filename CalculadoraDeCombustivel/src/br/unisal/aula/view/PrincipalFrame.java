@@ -122,27 +122,9 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(44, 62, 80));
         jLabel4.setText("Preço");
 
-        precoEtanolTextField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                precoEtanolTextFieldFocusLost(evt);
-            }
-        });
-
-        kmLitroEtanolTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kmLitroEtanolTextFieldActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(44, 62, 80));
         jLabel5.setText("Km/Litro");
-
-        kmLitroGasolinaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kmLitroGasolinaTextFieldActionPerformed(evt);
-            }
-        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(44, 62, 80));
@@ -396,14 +378,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kmLitroEtanolTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kmLitroEtanolTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kmLitroEtanolTextFieldActionPerformed
-
-    private void kmLitroGasolinaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kmLitroGasolinaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kmLitroGasolinaTextFieldActionPerformed
-
     private void calcularButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularButtonActionPerformed
 
         try {
@@ -456,18 +430,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private void limparButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparButtonActionPerformed
         etanolKmLabel.setText("");
         gasolinaKmLabel.setText("");
-        
     }//GEN-LAST:event_limparButtonActionPerformed
-
-    private void precoEtanolTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_precoEtanolTextFieldFocusLost
-        try {
-            double etanolPreco = ConverterCampoHelper.parseDouble("Preço etanol", precoEtanolTextField.getText());
-            ConverterCampoHelper.validarMaiorQue(etanolPreco, 0);
-        } catch (CampoVazioException | LimiteCampoException ex) {
-            MensagemHelper.exibir(ex.getMessage());
-            precoEtanolTextField.requestFocusInWindow();
-        }
-    }//GEN-LAST:event_precoEtanolTextFieldFocusLost
 
     /**
      * @param args the command line arguments
@@ -513,7 +476,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -524,7 +486,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;

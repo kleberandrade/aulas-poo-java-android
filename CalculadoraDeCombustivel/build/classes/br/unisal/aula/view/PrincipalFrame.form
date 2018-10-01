@@ -240,14 +240,8 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="precoEtanolTextField">
-              <Events>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="precoEtanolTextFieldFocusLost"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="kmLitroEtanolTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kmLitroEtanolTextFieldActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -261,9 +255,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="kmLitroGasolinaTextField">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kmLitroGasolinaTextFieldActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
