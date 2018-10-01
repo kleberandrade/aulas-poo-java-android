@@ -55,7 +55,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(41, 128, 185));
 
-        jLabel1.setFont(new java.awt.Font("Bell MT", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(236, 240, 241));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CALCULADORA IMC");
@@ -72,21 +72,23 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(44, 62, 80));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(52, 152, 219), 2));
         jPanel3.setFont(new java.awt.Font("Symusic_IV25", 1, 14)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel2.setLabelFor(nomeTextField);
         jLabel2.setText("NOME");
 
-        jLabel4.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel4.setLabelFor(pesoTextField);
         jLabel4.setText("PESO");
 
         pesoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -101,18 +103,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(236, 240, 241));
+        jLabel5.setLabelFor(alturaTextField);
         jLabel5.setText("ALTURA");
 
-        jLabel6.setFont(new java.awt.Font("Bell MT", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(236, 240, 241));
         jLabel6.setText("RESULTADO");
 
-        resultadoLabel.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        resultadoLabel.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         resultadoLabel.setForeground(new java.awt.Color(236, 240, 241));
         resultadoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        resultadoLabel.setText("SEU IMC É 50");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -125,12 +127,16 @@ public class PrincipalFrame extends javax.swing.JFrame {
                     .addComponent(nomeTextField)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(pesoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(alturaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 173, Short.MAX_VALUE))
+                            .addComponent(pesoTextField))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(145, 145, 145))
+                            .addComponent(alturaTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -163,21 +169,19 @@ public class PrincipalFrame extends javax.swing.JFrame {
         );
 
         limparButton.setBackground(new java.awt.Color(231, 76, 60));
-        limparButton.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        limparButton.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        limparButton.setForeground(new java.awt.Color(44, 62, 80));
         limparButton.setText("LIMPAR");
-        limparButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        limparButton.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         limparButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limparButtonActionPerformed(evt);
             }
         });
 
-        calcularButton.setBackground(new java.awt.Color(46, 204, 113));
-        calcularButton.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        calcularButton.setBackground(new java.awt.Color(39, 174, 96));
+        calcularButton.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        calcularButton.setForeground(new java.awt.Color(44, 62, 80));
         calcularButton.setText("CALCULAR");
-        calcularButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        calcularButton.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         calcularButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcularButtonActionPerformed(evt);
@@ -194,20 +198,20 @@ public class PrincipalFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(limparButton, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(calcularButton, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(limparButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(calcularButton, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(limparButton, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                    .addComponent(limparButton, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                     .addComponent(calcularButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -231,6 +235,18 @@ public class PrincipalFrame extends javax.swing.JFrame {
         campo.setText(TEXTO_VAZIO);
     }
 
+    private void alturaTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularButton.doClick();
+        }
+    }//GEN-LAST:event_alturaTextFieldKeyPressed
+
+    private void pesoTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextFieldKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularButton.doClick();
+        }
+    }//GEN-LAST:event_pesoTextFieldKeyPressed
+
     private void limparButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparButtonActionPerformed
         limparTextField(nomeTextField);
         limparTextField(pesoTextField);
@@ -246,24 +262,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
         try {
             Pessoa p = PessoaHelper.criarPessoa(nome, pesoStr, alturaStr);
             double imc = IMC.calcularIMC(p);
-            String resultado = String.format("Seu IMC é: %.2f", imc);
+            String resultado = String.format("Seu IMC é %.2f", imc);
             resultadoLabel.setText(resultado + " (" + IMC.getStatusSaude(p) + ")");
         } catch (IMCCampoVazioException | IMCNumeroNegativoException | IMCFormatoInvalidoException erro) {
             MensagemHelper.exibir(erro.getMessage());
         }
     }//GEN-LAST:event_calcularButtonActionPerformed
-
-    private void alturaTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alturaTextFieldKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            calcularButton.doClick();
-        }
-    }//GEN-LAST:event_alturaTextFieldKeyPressed
-
-    private void pesoTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pesoTextFieldKeyPressed
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            calcularButton.doClick();
-        }
-    }//GEN-LAST:event_pesoTextFieldKeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
