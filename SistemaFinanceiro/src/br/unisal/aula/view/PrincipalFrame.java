@@ -1,29 +1,66 @@
 package br.unisal.aula.view;
 
+import br.unisal.aula.charts.BarChartHelper;
+import br.unisal.aula.charts.PieChartHelper;
 import br.unisal.aula.models.ItemFinanceiro;
 import br.unisal.aula.tables.ItemFinanceiroTableModel;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.jfree.chart.ChartPanel;
 
 public class PrincipalFrame extends javax.swing.JFrame {
 
-    private List<ItemFinanceiro> lista;
+        private List<ItemFinanceiro> lista;
     private ItemFinanceiroTableModel modelo;
-    
+
     public PrincipalFrame() {
         initComponents();
         inicializar();
         super.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
-    
-    private void inicializar(){
+
+    private void inicializar() {
         lista = new ArrayList<>();
         modelo = new ItemFinanceiroTableModel(lista);
         itensFinanceirosTable.setModel(modelo);
         limparCampos();
+        atualizarGraficos();
+    }
+    
+    private void atualizarGraficos(){
+        atualizarGraficoBarras();
+        atualizarGraficoPizza();
+    }
+
+    public void atualizarGraficoBarras() {
+
+        String[] labels = {"Receita", "Despesa", "Saldo"};
+        double[] values = {5000.0, 3000.0, 2000.0};
+        ChartPanel chartPanel = BarChartHelper.criar(labels, values);
+
+        Dimension dimensao = new Dimension(graficoBarraPanel.getWidth(), graficoBarraPanel.getHeight());
+
+        graficoBarraPanel.setPreferredSize(dimensao);
+        graficoBarraPanel.setLayout(new BorderLayout());
+        graficoBarraPanel.add(chartPanel, BorderLayout.CENTER);
+        graficoBarraPanel.validate();
+    }
+
+    public void atualizarGraficoPizza() {
+
+        ChartPanel chartPanel = PieChartHelper.criar(categoriaComboBox, lista);
+        
+        Dimension dimensao = new Dimension(graficoPizzaPanel.getWidth(), graficoPizzaPanel.getHeight());
+
+        graficoPizzaPanel.setPreferredSize(dimensao);
+        graficoPizzaPanel.setLayout(new BorderLayout());
+        graficoPizzaPanel.add(chartPanel, BorderLayout.CENTER);
+        graficoPizzaPanel.validate();
     }
 
     @SuppressWarnings("unchecked")
@@ -67,11 +104,12 @@ public class PrincipalFrame extends javax.swing.JFrame {
         itensFinanceirosTable = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
+        graficoBarraPanel = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
+        graficoPizzaPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sistema Financeiro");
 
         jPanel1.setBackground(new java.awt.Color(236, 240, 241));
 
@@ -93,7 +131,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(236, 240, 241));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel10.setText("R$ 0,00");
+        jLabel10.setText("R$ 5000,00");
+        jLabel10.setToolTipText("");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -129,7 +168,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(236, 240, 241));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel12.setText("R$ 0,00");
+        jLabel12.setText("R$ 3000,00");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -165,7 +204,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(236, 240, 241));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel14.setText("R$ 0,00");
+        jLabel14.setText("R$ 2000,00");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -381,36 +420,38 @@ public class PrincipalFrame extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(236, 240, 241));
         jPanel15.setLayout(new java.awt.CardLayout(10, 10));
 
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout graficoBarraPanelLayout = new javax.swing.GroupLayout(graficoBarraPanel);
+        graficoBarraPanel.setLayout(graficoBarraPanelLayout);
+        graficoBarraPanelLayout.setHorizontalGroup(
+            graficoBarraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 474, Short.MAX_VALUE)
         );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        graficoBarraPanelLayout.setVerticalGroup(
+            graficoBarraPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 306, Short.MAX_VALUE)
         );
 
-        jPanel15.add(jPanel18, "card2");
+        jPanel15.add(graficoBarraPanel, "card2");
 
         jPanel12.add(jPanel15);
 
         jPanel16.setBackground(new java.awt.Color(236, 240, 241));
         jPanel16.setLayout(new java.awt.CardLayout(10, 10));
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        graficoPizzaPanel.setToolTipText("");
+
+        javax.swing.GroupLayout graficoPizzaPanelLayout = new javax.swing.GroupLayout(graficoPizzaPanel);
+        graficoPizzaPanel.setLayout(graficoPizzaPanelLayout);
+        graficoPizzaPanelLayout.setHorizontalGroup(
+            graficoPizzaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 474, Short.MAX_VALUE)
         );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        graficoPizzaPanelLayout.setVerticalGroup(
+            graficoPizzaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 306, Short.MAX_VALUE)
         );
 
-        jPanel16.add(jPanel19, "card2");
+        jPanel16.add(graficoPizzaPanel, "card2");
 
         jPanel12.add(jPanel16);
 
@@ -468,6 +509,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
         ItemFinanceiro item = getItemDaTela();
         modelo.adicionar(item);
         limparCampos();
+        atualizarGraficos();
     }//GEN-LAST:event_adicionarButtonActionPerformed
 
     private void limparButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparButtonActionPerformed
@@ -491,9 +533,11 @@ public class PrincipalFrame extends javax.swing.JFrame {
         if (linhaSelecionada >= 0){
             modelo.excluir(linhaSelecionada);
             limparCampos();
+            atualizarGraficos();
         } else {
             JOptionPane.showMessageDialog(this, "É necessário selecionar uma linha.");
         }
+        
     }//GEN-LAST:event_removerButtonActionPerformed
 
     private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
@@ -502,6 +546,7 @@ public class PrincipalFrame extends javax.swing.JFrame {
             ItemFinanceiro item = getItemDaTela();
             modelo.atualizar(linhaSelecionada, item);
             limparCampos();
+            atualizarGraficos();
         } else {
             JOptionPane.showMessageDialog(this, "É necessário selecionar uma linha.");
         }
@@ -552,6 +597,8 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dataDateChooser;
     private javax.swing.JTextField descricaoTextField;
     private javax.swing.JButton editarButton;
+    private javax.swing.JPanel graficoBarraPanel;
+    private javax.swing.JPanel graficoPizzaPanel;
     private javax.swing.JTable itensFinanceirosTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -573,8 +620,6 @@ public class PrincipalFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
