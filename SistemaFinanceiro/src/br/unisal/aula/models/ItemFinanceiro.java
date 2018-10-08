@@ -29,6 +29,10 @@ public class ItemFinanceiro implements Serializable {
         this.categoria = categoria;
         this.data = data;
     }
+
+    public ItemFinanceiro() {
+        
+    }
     
     public long getId() {
         return id;
@@ -79,5 +83,9 @@ public class ItemFinanceiro implements Serializable {
     public void setData(Date data) {
         this.data = data;
     }
-   
+
+    @Override
+    public String toString() {
+        return "ItemFinanceiro{" + "id=" + id + ", descricao=" + descricao + ", tipo=" + tipo + ", valor=" + valor + ", categoria=" + categoria + ", data=" + data + '}';
+    }
 }

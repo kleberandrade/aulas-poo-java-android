@@ -32,18 +32,21 @@ public class ItemFinanceiroTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         ItemFinanceiro item = linhas.get(rowIndex);
-        if (columnIndex == COL_ID) {
-            return item.getId();
-        } else if (columnIndex == COL_DESCRICAO) {
-            return item.getDescricao();
-        } else if (columnIndex == COL_CATEGORIA) {
-            return item.getCategoria();
-        } else if (columnIndex == COL_DATA) {
-            return item.getData();
-        } else if (columnIndex == COL_TIPO) {
-            return item.getTipo();
-        } else if (columnIndex == COL_VALOR) {
-            return item.getValor();
+        switch (columnIndex) {
+            case COL_ID:
+                return item.getId();
+            case COL_DESCRICAO:
+                return item.getDescricao();
+            case COL_CATEGORIA:
+                return item.getCategoria();
+            case COL_DATA:
+                return item.getData();
+            case COL_TIPO:
+                return item.getTipo();
+            case COL_VALOR:
+                return item.getValor();
+            default:
+                break;
         }
         return null;
     }
