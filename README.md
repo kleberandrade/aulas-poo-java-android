@@ -9,7 +9,6 @@ Disciplina do quarto semestre do curso de Engenharia da Computação na [Unisal 
 - [Paleta de Cores](https://flatuicolors.com/)
 - [JCalendar](https://toedter.com/jcalendar/)
 - [JFreeChart](http://www.jfree.org/jfreechart/) para geração de gráficos
-- [RXTXComm](http://jlog.org/rxtx.html) para comunicação com o Arduino pela porta Serial
 
 ## Projeto 1 - Calculadora de IMC (Índice de Massa Corporal)
 
